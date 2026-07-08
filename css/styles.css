@@ -14,12 +14,9 @@ body {
   margin-bottom: 1.5rem;
 }
 
-#navbar-container:empty {
-  margin-bottom: 0;
-}
-
 #navbar-container .navbar {
   margin-bottom: 0 !important;
+  min-height: 56px;
 }
 
 .auth-wrapper {
