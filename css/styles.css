@@ -5,6 +5,23 @@ body {
   min-height: 100vh;
 }
 
+/* Evita el "salto" visual del navbar: reserva su altura y color desde el
+   primer pintado, antes de que el módulo JS lo rellene con el contenido
+   según el rol de la sesión. */
+#navbar-container {
+  min-height: 56px;
+  background-color: #0d6efd;
+  margin-bottom: 1.5rem;
+}
+
+#navbar-container:empty {
+  margin-bottom: 0;
+}
+
+#navbar-container .navbar {
+  margin-bottom: 0 !important;
+}
+
 .auth-wrapper {
   min-height: 100vh;
   display: flex;
