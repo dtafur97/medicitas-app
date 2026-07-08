@@ -74,6 +74,7 @@ admin/reportes.html                → reportes por especialidad, estado y médi
 /js/components         navbar.js (navbar dinámico según rol)
 /js/utils              validators.js, dates.js, codes.js, ui.js
 /js/pages               Un módulo JS por página HTML
+/vendor                 Librerías de terceros locales (Bootstrap 5.3.3, Bootstrap Icons 1.11.3, Chart.js 4.4.4)
 /paciente, /medico, /admin   Páginas HTML agrupadas por rol
 ```
 
