@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel administrativo · MediCitas</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <div id="navbar-container"></div>
+
+  <main class="container pb-5">
+    <h1 class="h3 mb-1" data-testid="titulo-dashboard-admin">Hola, <span id="texto-nombre-admin" data-testid="texto-nombre-admin"></span> 👋</h1>
+    <p class="text-muted mb-4">Panel general del sistema MediCitas.</p>
+
+    <div class="row g-3 mb-4">
+      <div class="col-md-3 col-sm-6">
+        <div class="card dashboard-stat shadow-sm h-100">
+          <div class="card-body">
+            <p class="text-muted mb-1 small">Total de citas</p>
+            <h2 class="mb-0" id="stat-total-citas" data-testid="stat-total-citas">0</h2>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="card dashboard-stat stat-warning shadow-sm h-100">
+          <div class="card-body">
+            <p class="text-muted mb-1 small">Citas de hoy</p>
+            <h2 class="mb-0" id="stat-citas-hoy" data-testid="stat-citas-hoy">0</h2>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="card dashboard-stat stat-success shadow-sm h-100">
+          <div class="card-body">
+            <p class="text-muted mb-1 small">Médicos activos</p>
+            <h2 class="mb-0" id="stat-medicos-activos" data-testid="stat-medicos-activos">0</h2>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="card dashboard-stat stat-secondary shadow-sm h-100">
+          <div class="card-body">
+            <p class="text-muted mb-1 small">Pacientes registrados</p>
+            <h2 class="mb-0" id="stat-pacientes-registrados" data-testid="stat-pacientes-registrados">0</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h2 class="h5"><i class="bi bi-lightning"></i> Acciones rápidas</h2>
+        <div class="d-flex gap-2 flex-wrap">
+          <a href="monitoreo.html" class="btn btn-primary" id="btn-ir-monitoreo" data-testid="btn-ir-monitoreo">
+            <i class="bi bi-table"></i> Monitoreo de citas
+          </a>
+          <a href="medicos.html" class="btn btn-outline-primary" id="btn-ir-medicos" data-testid="btn-ir-medicos">
+            <i class="bi bi-person-badge"></i> Gestionar médicos
+          </a>
+          <a href="reportes.html" class="btn btn-outline-primary" id="btn-ir-reportes" data-testid="btn-ir-reportes">
+            <i class="bi bi-bar-chart"></i> Ver reportes
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="app-footer">MediCitas &copy; 2026 · Sistema de Gestión de Citas Médicas</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="../js/pages/admin-dashboard.js"></script>
+</body>
+</html>

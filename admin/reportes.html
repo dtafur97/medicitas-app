@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reportes · MediCitas</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <div id="navbar-container"></div>
+
+  <main class="container pb-5">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h1 class="h3 mb-0" data-testid="titulo-reportes">Reportes de citas</h1>
+      <button class="btn btn-outline-primary no-print" id="btn-imprimir-reporte" data-testid="btn-imprimir-reporte">
+        <i class="bi bi-printer"></i> Imprimir
+      </button>
+    </div>
+
+    <div class="card shadow-sm mb-4">
+      <div class="card-body">
+        <h2 class="h5 mb-3">Citas por especialidad</h2>
+        <div style="max-width: 700px;">
+          <canvas id="chart-citas-especialidad" data-testid="chart-citas-especialidad" height="120"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h2 class="h6 mb-3">Citas por especialidad</h2>
+            <table class="table table-sm" data-testid="tabla-reporte-especialidad">
+              <thead><tr><th>Especialidad</th><th>Citas</th></tr></thead>
+              <tbody id="tbody-reporte-especialidad" data-testid="tbody-reporte-especialidad"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h2 class="h6 mb-3">Citas por estado</h2>
+            <table class="table table-sm" data-testid="tabla-reporte-estado">
+              <thead><tr><th>Estado</th><th>Citas</th></tr></thead>
+              <tbody id="tbody-reporte-estado" data-testid="tbody-reporte-estado"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h2 class="h6 mb-3">Citas por médico</h2>
+            <table class="table table-sm" data-testid="tabla-reporte-medico">
+              <thead><tr><th>Médico</th><th>Citas</th></tr></thead>
+              <tbody id="tbody-reporte-medico" data-testid="tbody-reporte-medico"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="app-footer">MediCitas &copy; 2026 · Sistema de Gestión de Citas Médicas</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+  <script type="module" src="../js/pages/admin-reportes.js"></script>
+</body>
+</html>

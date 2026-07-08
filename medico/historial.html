@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Historial clínico · MediCitas</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <div id="navbar-container"></div>
+
+  <main class="container pb-5">
+    <h1 class="h3 mb-3" data-testid="titulo-historial">Historial clínico</h1>
+
+    <div id="historial-alert-container" data-testid="historial-alert-container"></div>
+
+    <div id="historial-sin-cita" class="alert alert-warning d-none" data-testid="alert-cita-no-encontrada">
+      No se encontró la cita indicada.
+    </div>
+
+    <div id="historial-contenido" class="d-none">
+      <div class="card shadow-sm mb-4">
+        <div class="card-body">
+          <h2 class="h5 mb-3"><i class="bi bi-person-badge"></i> Datos del paciente</h2>
+          <p class="mb-1">Nombre: <strong id="texto-paciente-nombre" data-testid="texto-paciente-nombre"></strong></p>
+          <p class="mb-1">DNI: <span id="texto-paciente-dni" data-testid="texto-paciente-dni"></span></p>
+          <p class="mb-1">Cita: <span id="texto-cita-codigo" data-testid="texto-cita-codigo"></span></p>
+          <p class="mb-0">Fecha de la cita: <span id="texto-cita-fecha" data-testid="texto-cita-fecha"></span></p>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mb-4">
+        <div class="card-body">
+          <h2 class="h5 mb-3"><i class="bi bi-file-medical"></i> Historial de esta cita</h2>
+          <div id="historial-detalle-existente" class="d-none">
+            <p class="mb-1"><strong>Diagnóstico:</strong> <span id="texto-diagnostico" data-testid="texto-diagnostico"></span></p>
+            <p class="mb-1"><strong>Alergias:</strong> <span id="texto-alergias" data-testid="texto-alergias"></span></p>
+            <p class="mb-0"><strong>Atenciones previas:</strong> <span id="texto-atenciones-previas" data-testid="texto-atenciones-previas"></span></p>
+          </div>
+
+          <form id="form-historial" data-testid="form-historial" class="d-none">
+            <p class="text-muted small">Aún no hay historial registrado para esta cita. Completa los datos:</p>
+            <div class="mb-3">
+              <label for="input-diagnostico" class="form-label">Diagnóstico</label>
+              <textarea class="form-control" id="input-diagnostico" data-testid="input-diagnostico" rows="2" required></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="input-alergias" class="form-label">Alergias</label>
+              <input type="text" class="form-control" id="input-alergias" data-testid="input-alergias" placeholder="Ninguna conocida">
+            </div>
+            <div class="mb-3">
+              <label for="input-atenciones-previas" class="form-label">Atenciones previas</label>
+              <textarea class="form-control" id="input-atenciones-previas" data-testid="input-atenciones-previas" rows="2"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" id="btn-guardar-historial" data-testid="btn-guardar-historial">
+              <i class="bi bi-save"></i> Guardar historial
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h2 class="h5 mb-3"><i class="bi bi-clock-history"></i> Historial previo del paciente</h2>
+          <div id="lista-historial-previo" data-testid="lista-historial-previo"></div>
+          <p class="text-muted mb-0 d-none" id="texto-sin-historial-previo" data-testid="texto-sin-historial-previo">
+            Este paciente no tiene atenciones previas registradas.
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="app-footer">MediCitas &copy; 2026 · Sistema de Gestión de Citas Médicas</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="../js/pages/medico-historial.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crear cuenta · MediCitas</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="auth-wrapper">
+    <div class="card auth-card shadow-lg border-0" style="max-width: 560px;">
+      <div class="card-body p-4 p-md-5">
+        <div class="text-center mb-4">
+          <i class="bi bi-person-plus text-primary" style="font-size: 2.5rem;"></i>
+          <h1 class="h3 mt-2 mb-0">Crear cuenta de paciente</h1>
+          <p class="text-muted small">Regístrate para reservar tus citas médicas</p>
+        </div>
+
+        <div id="register-alert-container" data-testid="register-alert-container"></div>
+
+        <form id="form-register" data-testid="form-register" novalidate>
+          <div class="mb-3">
+            <label for="input-register-nombre" class="form-label">Nombre completo</label>
+            <input type="text" class="form-control" id="input-register-nombre" data-testid="input-register-nombre" required>
+            <div class="invalid-feedback" id="error-register-nombre" data-testid="error-register-nombre"></div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="input-register-dni" class="form-label">DNI (8 dígitos)</label>
+              <input type="text" class="form-control" id="input-register-dni" data-testid="input-register-dni" maxlength="8" required>
+              <div class="invalid-feedback" id="error-register-dni" data-testid="error-register-dni"></div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="input-register-telefono" class="form-label">Teléfono (9 dígitos)</label>
+              <input type="text" class="form-control" id="input-register-telefono" data-testid="input-register-telefono" maxlength="9" required>
+              <div class="invalid-feedback" id="error-register-telefono" data-testid="error-register-telefono"></div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="input-register-email" class="form-label">Correo electrónico</label>
+            <input type="email" class="form-control" id="input-register-email" data-testid="input-register-email" required>
+            <div class="invalid-feedback" id="error-register-email" data-testid="error-register-email"></div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="input-register-password" class="form-label">Contraseña</label>
+              <input type="password" class="form-control" id="input-register-password" data-testid="input-register-password" required>
+              <div class="invalid-feedback" id="error-register-password" data-testid="error-register-password"></div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="input-register-confirm-password" class="form-label">Confirmar contraseña</label>
+              <input type="password" class="form-control" id="input-register-confirm-password" data-testid="input-register-confirm-password" required>
+              <div class="invalid-feedback" id="error-register-confirm-password" data-testid="error-register-confirm-password"></div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary w-100" id="btn-register-submit" data-testid="btn-register-submit">
+            <i class="bi bi-check-circle"></i> Crear cuenta
+          </button>
+        </form>
+
+        <p class="text-center mt-3 mb-0">
+          ¿Ya tienes cuenta?
+          <a href="login.html" id="link-ir-login" data-testid="link-ir-login">Inicia sesión aquí</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="js/pages/register.js"></script>
+</body>
+</html>

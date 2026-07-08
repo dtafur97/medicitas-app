@@ -1,0 +1,88 @@
+/* MediCitas - estilos personalizados sobre Bootstrap 5 */
+
+body {
+  background-color: #f4f7fb;
+  min-height: 100vh;
+}
+
+.auth-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+  padding: 2rem 1rem;
+}
+
+.auth-card {
+  max-width: 480px;
+  width: 100%;
+}
+
+.demo-credentials {
+  background-color: #eef4ff;
+  border: 1px dashed #0d6efd;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.85rem;
+}
+
+.card-especialidad {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  cursor: pointer;
+  height: 100%;
+}
+
+.card-especialidad:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.btn .bi {
+  font-size: 1em;
+  vertical-align: -0.125em;
+}
+
+.card-especialidad .icono-especialidad {
+  font-size: 2rem;
+  color: #0d6efd;
+}
+
+.franja-slot {
+  min-width: 90px;
+}
+
+.franja-slot.btn-outline-primary:disabled {
+  opacity: 0.35;
+}
+
+.dashboard-stat {
+  border-left: 4px solid #0d6efd;
+}
+
+.dashboard-stat.stat-warning { border-left-color: #ffc107; }
+.dashboard-stat.stat-success { border-left-color: #198754; }
+.dashboard-stat.stat-danger { border-left-color: #dc3545; }
+.dashboard-stat.stat-secondary { border-left-color: #6c757d; }
+
+table.table-hover tbody tr {
+  cursor: default;
+}
+
+.notif-item.no-leida {
+  background-color: #eef4ff;
+  border-left: 4px solid #0d6efd;
+}
+
+footer.app-footer {
+  padding: 1.5rem 0;
+  text-align: center;
+  color: #6c757d;
+  font-size: 0.85rem;
+}
+
+@media print {
+  #navbar-container, .no-print {
+    display: none !important;
+  }
+}

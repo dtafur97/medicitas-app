@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Monitoreo de citas · MediCitas</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <div id="navbar-container"></div>
+
+  <main class="container pb-5">
+    <h1 class="h3 mb-3" data-testid="titulo-monitoreo">Monitoreo de citas</h1>
+
+    <div id="monitoreo-alert-container" data-testid="monitoreo-alert-container"></div>
+
+    <div class="card shadow-sm mb-3">
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-3">
+            <label for="select-filtro-monitoreo-estado" class="form-label">Estado</label>
+            <select class="form-select" id="select-filtro-monitoreo-estado" data-testid="select-filtro-monitoreo-estado">
+              <option value="todas">Todos</option>
+              <option value="pendiente">Pendiente</option>
+              <option value="confirmada">Confirmada</option>
+              <option value="cancelada">Cancelada</option>
+              <option value="atendida">Atendida</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label for="select-filtro-monitoreo-medico" class="form-label">Médico</label>
+            <select class="form-select" id="select-filtro-monitoreo-medico" data-testid="select-filtro-monitoreo-medico">
+              <option value="todos">Todos</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <label for="input-filtro-monitoreo-fecha" class="form-label">Fecha</label>
+            <input type="date" class="form-control" id="input-filtro-monitoreo-fecha" data-testid="input-filtro-monitoreo-fecha">
+          </div>
+          <div class="col-md-2 d-flex align-items-end">
+            <button class="btn btn-outline-secondary w-100" id="btn-limpiar-filtros-monitoreo" data-testid="btn-limpiar-filtros-monitoreo">
+              Limpiar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table table-hover align-middle bg-white" data-testid="tabla-monitoreo">
+        <thead>
+          <tr>
+            <th>Código</th>
+            <th>Paciente</th>
+            <th>Médico</th>
+            <th>Especialidad</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody id="tbody-monitoreo" data-testid="tbody-monitoreo"></tbody>
+      </table>
+    </div>
+    <p class="text-muted d-none" id="texto-sin-resultados-monitoreo" data-testid="texto-sin-resultados-monitoreo">
+      No se encontraron citas con los filtros seleccionados.
+    </p>
+    <p class="text-muted small" id="texto-total-monitoreo" data-testid="texto-total-monitoreo"></p>
+  </main>
+
+  <footer class="app-footer">MediCitas &copy; 2026 · Sistema de Gestión de Citas Médicas</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="../js/pages/admin-monitoreo.js"></script>
+</body>
+</html>
