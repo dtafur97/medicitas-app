@@ -54,7 +54,5 @@ form.addEventListener('submit', (e) => {
     dismissible: false
   });
 
-  setTimeout(() => {
-    window.location.href = homePathForRole(result.session.rol);
-  }, 600);
+  window.location.href = homePathForRole(result.session.rol);
 });
