@@ -4,6 +4,15 @@ import { getAll } from './storage.js';
 
 const SESSION_KEY = 'medicitas_session';
 
+// Workaround para herramientas de automatización (ej. Selenium IDE): en
+// navegadores Chromium (Chrome, Edge), al navegar de una página a otra el
+// motor puede guardar la página anterior en back/forward cache (bfcache) en
+// lugar de descartarla. Esto rompe el canal de mensajes de las extensiones
+// de automatización con el error "the message channel is closed". Un
+// listener de 'unload' (aunque esté vacío) hace que el navegador excluya la
+// página del bfcache, evitando el problema.
+window.addEventListener('unload', () => {});
+
 export function login(email, password) {
   const emailNorm = (email || '').trim().toLowerCase();
   const usuarios = getAll('usuarios');
